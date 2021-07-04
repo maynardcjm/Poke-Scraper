@@ -40,5 +40,10 @@ cookies={'Cookie':logon_req.headers['Set-Cookie']}
 # API Query Request for Card Data 
 query_req = requests.get(url+'/api/search.php?limit=100&sort=name', headers=cookies)
 
+# Note you may need to make multiple requests with different query parameters for limit to see more results
+# Play around with searching and looking at the different variables in the url query. 
+# Example: search.php?limit=100&n=charizard
+# Happy Hacking :)
+
 print(query_req.status_code)
 print(query_req.content)
