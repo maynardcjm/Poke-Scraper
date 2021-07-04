@@ -46,4 +46,18 @@ query_req = requests.get(url+'/api/search.php?limit=100&sort=name', headers=cook
 # Happy Hacking :)
 
 print(query_req.status_code)
-print(query_req.content)
+# print(query_req.content) # Since this returns json data it's easiest to user the json function
+# print(query_req.json())
+
+# Example Using JSON Object
+#print(query_req.json()[0]['name'])
+#print(query_req.json()[0]['text'])
+
+
+# Get the data for the first card object returned by the request
+# Note: datastructure is a list of dictionaries
+
+first_card = query_req.json()[0]
+# Print All Details for First Card
+for k in first_card:
+    print(k,':',first_card[k])
