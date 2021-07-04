@@ -4,7 +4,7 @@ import argparse
 # Initialize parser
 parser = argparse.ArgumentParser()
 
-# Adding optional argument
+# Command-line Argument
 parser.add_argument("-u", "--username", help = "Username to authenticate to web page with")
 
 parser.add_argument("-p", "--password", help = "Password to authenticate to web page with")
@@ -13,10 +13,11 @@ parser.add_argument("-p", "--password", help = "Password to authenticate to web 
 # Read arguments from command line
 args = parser.parse_args()
 
-# Displays Arguments Back to User
+# Assign Cmdline args to variables
 username = args.username
 password = args.password
 
+# Displays Arguments Back to User
 print('Username:', username)
 print('Password:', password)
 
